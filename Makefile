@@ -7,7 +7,7 @@ LCS: LCS.cpp
 	g++ LCS.cpp -o LCS.bin
 
 GetOneFileFromSubDir: GetOneFileFromSubDir.cpp
-	g++ GetOneFileFromSubDir.cpp -o GetOneFileFromSubDir
+	g++ GetOneFileFromSubDir.cpp -o GetOneFileFromSubDir.bin
 
 clean: 
 	rm *.bin

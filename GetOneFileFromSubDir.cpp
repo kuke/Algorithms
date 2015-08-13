@@ -1,5 +1,6 @@
 #include <iostream>
 #include <dirent.h>
+#include <stdlib.h>
 
 int main(int argc,char *argv[])
 {
@@ -7,7 +8,7 @@ int main(int argc,char *argv[])
     std::string dest;
     if(argc == 3)
     {
-        root_dir_name = argv[1];
+        root_dir_name = argv[1]+std::string("/");
         dest = argv[2];
         std::cout<<root_dir_name<<" "<<dest<<std::endl;
     } 
@@ -20,7 +21,7 @@ int main(int argc,char *argv[])
     struct dirent *root_dirp;
     if((root_dir=opendir(root_dir_name.c_str())) == NULL)
     {
-        fprintf(stderr,"Err: Open ocl dir failed!\n");
+        std::cout<<"Err: Open ocl dir failed!\n";
         exit(1);
     }
     while((root_dirp = readdir(root_dir)) != NULL)
